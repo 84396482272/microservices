@@ -1,0 +1,5 @@
+package io.cursoms.domain;
+
+public class Cliente {
+
+}

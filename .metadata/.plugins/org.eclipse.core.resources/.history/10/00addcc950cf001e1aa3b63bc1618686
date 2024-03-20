@@ -1,0 +1,5 @@
+package io.cursoms.infra.repository;
+
+public class ClienteRepository {
+
+}

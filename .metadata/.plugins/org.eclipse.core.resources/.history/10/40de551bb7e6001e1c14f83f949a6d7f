@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: ms-clients
+    
+server:
+  port: 0 #indica para o Spring Boot que gostaríamos de subir este microservice em uma porta randômica.
+
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    #cria um nome único para cada instância do MS e irá aparecer dentro do eureka server e deve obrigatoriamente ser único.
+    #“Nome do microservice : nome da instancia : valor randômico “
+    instance-id:${spring.application.name}: ${spring.application.instance_id:${random.value}}

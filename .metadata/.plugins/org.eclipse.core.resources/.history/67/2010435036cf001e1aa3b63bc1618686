@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: ms-clients
+    
+server:
+  port: 0
