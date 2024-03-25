@@ -21,6 +21,7 @@ public class MsGatewayApplication {
 		return builder
 				.routes()
 					.route(r -> r.path("/clientes/**").uri("lb://ms-clients")) //quando chegar uma requisição no Gateway com esta URL, ele irá redirectionar para URI.
+					.route(r -> r.path("/cartoes/**").uri("lb://ms-cartoes")) //quando chegar uma requisição no Gateway com esta URL, ele irá redirectionar para URI.
 				.build(); //lb -> significa Load Balancer
 	}
 
