@@ -1,6 +1,11 @@
 spring:
   application:
     name: ms-cartoes
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 server:
   port: 0 #indica para o Spring Boot que gostaríamos de subir este microservice em uma porta randômica.
@@ -14,3 +19,7 @@ eureka:
     #cria um nome único para cada instância do MS e irá aparecer dentro do eureka server e deve obrigatoriamente ser único.
     #“Nome do microservice : nome da instancia : valor randômico “
     instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+
+mq:
+  queues:
+    emissao-cartoes: emissao-cartoes
